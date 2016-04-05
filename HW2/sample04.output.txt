@@ -1,0 +1,118 @@
+Ask: Faster(Bob, Steve)
+Ask: Buffalo(Bob)
+True: Buffalo(Bob)
+Ask: Pig(Steve)
+False: Pig(Steve)
+Ask: Faster(Bob, Steve)
+Ask: Pig(Bob)
+False: Pig(Bob)
+Ask: Faster(Bob, Steve)
+Ask: Faster(Bob, _)
+Ask: Buffalo(Bob)
+True: Buffalo(Bob)
+Ask: Pig(_)
+True: Pig(Pat)
+True: Faster(Bob, Pat)
+Ask: Faster(Pat, Steve)
+Ask: Buffalo(Pat)
+False: Buffalo(Pat)
+Ask: Faster(Pat, Steve)
+Ask: Pig(Pat)
+True: Pig(Pat)
+Ask: Slug(Steve)
+True: Slug(Steve)
+True: Faster(Pat, Steve)
+True: Faster(Bob, Steve)
+Ask: Pig(Steve)
+False: Pig(Steve)
+False
+
+Faster(Bob, Steve) && Pig(Steve)
+6
+Buffalo(x) && Pig(y) => Faster(x, y)
+Pig(x) && Slug(y) => Faster(x, y)
+Faster(x, y) && Faster(y, z) => Faster(x, z)
+Buffalo(Bob)
+Pig(Pat)
+Slug(Steve)
+
+
+for rule in KB.fetchRulesForGoal(goal):
+		if str(rule)==str(substitute(theta,goal)):
+			print "Ask1:",substitute(theta,goal)
+			print "True1:",substitute(theta,goal)
+			
+				#f=open('output.txt','a+')
+				#f.write("Ask: "+str(substitute(theta,goal))+ '\n')
+				#f.write("True: "+str(substitute(theta,goal))+ '\n')
+				#f.close()
+			pri=1
+
+SAMPLE 2:
+
+Ask: Bully(_)
+Ask: BeatUp(_, _)
+True: BeatUp(Anakin, Luke)
+Ask: ViterbiSquirrel(Anakin)
+Ask: EESquirrel(Anakin)
+False: EESquirrel(Anakin)
+Ask: ViterbiSquirrel(Anakin)
+Ask: CSSquirrel(Anakin)
+True: CSSquirrel(Anakin)
+True: ViterbiSquirrel(Anakin)
+Ask: ViterbiSquirrel(Luke)
+Ask: EESquirrel(Luke)
+True: EESquirrel(Luke)
+True: ViterbiSquirrel(Luke)
+True: Bully(Anakin)
+True
+
+Bully(x)
+7
+BeatUp(x, y) && ViterbiSquirrel(x) && ViterbiSquirrel(y) => Bully(x)
+EESquirrel(x) => ViterbiSquirrel(x)
+CSSquirrel(x) => ViterbiSquirrel(x)
+CSSquirrel(Yoda)
+CSSquirrel(Anakin)
+EESquirrel(Luke)
+BeatUp(Anakin, Luke)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+Ask: Faster(Pat, _)
+Ask: Buffalo(Pat)
+False: Buffalo(Pat)
+Ask: Faster(Pat, _)
+Ask: Pig(Pat)
+True: Pig(Pat)
+Ask: Slug(_)
+True: Slug(Steve)
+True: Faster(Pat, Steve)
+True
+
+Faster(Pat, x)
+6
+Buffalo(x) && Pig(y) => Faster(x, y)
+Pig(x) && Slug(y) => Faster(x, y)
+Faster(x, y) && Faster(y, z) => Faster(x, z)
+Buffalo(Bob)
+Pig(Pat)
+Slug(Steve)
+
+
+Ask: Faster(Pat, x)
+Ask: Buffalo(Pat)
+False: Buffalo(Bob)
+
+Ask: Pig(Pat)
+True: Pig(Pat)
+Ask: Slug(x)
+True: Slug(Steve)
+True: Faster(Pat, Steve)
+True
