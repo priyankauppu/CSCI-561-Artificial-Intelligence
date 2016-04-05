@@ -1,0 +1,12 @@
+**XX*
+**XOX
+*X*O*
+**OO*
+*****
+
+sneak=max(board_temp)
+        print sneak
+        sneak_value= max(sneak)
+        sneak_location= search(board_temp,sneak_value)
+        print "Highest Sneak Vale",sneak_location,sneak_value
+
